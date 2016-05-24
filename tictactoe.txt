@@ -10,7 +10,8 @@ char* line3[13] = { "|", " ", ".", " ", "|", " ", ".", " ", "|", " ", ".", " ", 
 
 //Game start
 cout << "Welcome to the two player tic-tac-toe game!" << endl;
-Sleep(1500);
+Sleep(1800);
+//thought it was
 int z = 1;
 //Printing Line 1 (empty)
 for (int i = 0; i < 13; i++)
