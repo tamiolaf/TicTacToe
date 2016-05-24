@@ -1,0 +1,285 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int main() { 
+//Declaring lines of tic tac toe board 
+char* line1[13] = { "|", " ", ".", " ", "|", " ", ".", " ", "|", " ", ".", " ", "|" }; 
+char* line2[13] = { "|", " ", ".", " ", "|", " ", ".", " ", "|", " ", ".", " ", "|" }; 
+char* line3[13] = { "|", " ", ".", " ", "|", " ", ".", " ", "|", " ", ".", " ", "|" };
+
+//Game start
+cout << "Welcome to the two player tic-tac-toe game!" << endl;
+Sleep(1500);
+int z = 1;
+//Printing Line 1 (empty)
+for (int i = 0; i < 13; i++)
+{
+    cout << line1[i];
+}
+cout << "\n";
+//Printing Line 2 (empty)
+for (int i = 0; i < 13; i++)
+{
+    cout << line2[i];
+}
+cout << "\n";
+//Printing Line 3 (empty)
+for (int i = 0; i < 13; i++)
+{
+    cout << line3[i];
+}
+cout << "\n";
+int a = 1;
+
+//Loop starts
+do {
+
+    cout << "Player 1! Type in the row first, then the column:";
+    int x; int y;
+    cin >> x >> y;
+
+    while (y>3 || y < 1 || x>3 || x < 1) {
+        cout << "\nThe spot you typed isn't in the grid." << endl;
+        cout << "Enter coordinates again. Row and then column:";
+
+        cin >> x >> y;
+    }
+    //Line 1
+    if (x == 1) {
+        if (y == 1) {
+            //Column 1
+            line1[2] = "X";
+
+        }
+        else if (y == 2) {
+            //Column 2
+            line1[6] = "X";
+        }
+        else if (y == 3) {
+            //Column 3
+            line1[10] = "X";
+        }
+    }
+    else if (x == 2) {
+        if (y == 1) {
+            //Column 1
+            line2[2] = "X";
+        }
+        else if (y == 2) {
+            //Column 2
+            line2[6] = "X";
+        }
+        else if (y == 3) {
+            //Column 3
+            line2[10] = "X";
+        }
+    }
+    else if (x == 3) {
+        if (y == 1) {
+            //Column 1
+            line3[2] = "X";
+        }
+        else if (y == 2) {
+            //Column 2
+            line3[6] = "X";
+        }
+        else if (y == 3) {
+            //Column 3
+            line3[10] = "X";
+        }
+
+    }
+
+    //Showing first move
+    //Printing Line 1 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line1[i];
+    }
+    cout << "\n";
+    //Printing Line 2 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line2[i];
+    }
+    cout << "\n";
+    //Printing Line 3 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line3[i];
+    }
+
+    cout << "\n";
+    a *= -1;
+
+    if (line1[2] == "X" && line1[6] == "X" && line1[10] == "X" || line2[2] == "X" && line2[6] == "X" && line2[10] == "X" || line3[2] == "X" && line3[6] == "X" && line3[10] == "X" || line1[2] == "X" && line2[2] == "X" && line3[2] == "X" || line1[6] == "X" && line2[6] == "X" && line3[6] == "X" || line1[10] == "X" && line2[10] == "X" && line3[10] == "X" || line1[2] == "X" && line2[6] == "X" && line3[10] == "X" || line1[10] == "X" && line2[6] == "X" && line3[2] == "X") {
+        break;
+    }
+
+    cout << "Ok, Player 2 now you go:";
+    cin >> x >> y;
+
+    while (y>3 || y < 1 || x>3 || x < 1) {
+        cout << "\nThe number you typed isn't in the grid." << endl;
+        cout << "Enter coordinates again. Row and then column:";
+
+        cin >> x >> y;
+    }
+
+    //Line 1
+    if (x == 1) {
+        if (y == 1) {
+            //Column 1
+            line1[2] = "O";
+
+        }
+        else if (y == 2) {
+            //Column 2
+            line1[6] = "O";
+        }
+        else if (y == 3) {
+            //Column 3
+            line1[10] = "O";
+        }
+    }
+    else if (x == 2) {
+        if (y == 1) {
+            //Column 1
+            line2[2] = "O";
+        }
+        else if (y == 2) {
+            //Column 2
+            line2[6] = "O";
+        }
+        else if (y == 3) {
+            //Column 3
+            line2[10] = "O";
+        }
+    }
+    else if (x == 3) {
+        if (y == 1) {
+            //Column 1
+            line3[2] = "O";
+        }
+        else if (y == 2) {
+            //Column 2
+            line3[6] = "O";
+        }
+        else if (y == 3) {
+            //Column 3
+            line3[10] = "O";
+        }
+
+    }
+
+    //Showing first move
+    //Printing Line 1 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line1[i];
+    }
+    cout << "\n";
+    //Printing Line 2 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line2[i];
+    }
+    cout << "\n";
+    //Printing Line 3 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line3[i];
+    }
+    cout << "\n";
+    a *= -1;
+
+    if (line1[2] == "O" && line1[6] == "O" && line1[10] == "O" || line2[2] == "O" && line2[6] == "O" && line2[10] == "O" || line3[2] == "O" && line3[6] == "O" && line3[10] == "O" || line1[2] == "O" && line2[2] == "O" && line3[2] == "O" || line1[6] == "O" && line2[6] == "O" && line3[6] == "O" || line1[10] == "O" && line2[10] == "O" && line3[10] == "O" || line1[2] == "O" && line2[6] == "O" && line3[10] == "O" || line1[10] == "O" && line2[6] == "O" && line3[2]=="O") {
+        break;
+    }
+                                                        /*  cout << "Player 1! Type in the row first, then the column:";
+
+    cin >> x >> y;
+
+    while (y>3 || y < 1 || x>3 || x < 1) {
+        cout << "\nThe number you typed isn't in the grid." << endl;
+        cout << "Enter coordinates again. Row and then column:";
+
+        cin >> x >> y;
+    }
+    //Line 1
+    if (x == 1) {
+        if (y == 1) {
+            //Column 1
+            line1[2] = "X";
+
+        }
+        else if (y == 2) {
+            //Column 2
+            line1[6] = "X";
+        }
+        else if (y == 3) {
+            //Column 3
+            line1[10] = "X";
+        }
+    }
+    else if (x == 2) {
+        if (y == 1) {
+            //Column 1
+            line2[2] = "X";
+        }
+        else if (y == 2) {
+            //Column 2
+            line2[6] = "X";
+        }
+        else if (y == 3) {
+            //Column 3
+            line2[10] = "X";
+        }
+    }
+    else if (x == 3) {
+        if (y == 1) {
+            //Column 1
+            line3[2] = "X";
+        }
+        else if (y == 2) {
+            //Column 2
+            line3[6] = "X";
+        }
+        else if (y == 3) {
+            //Column 3
+            line3[10] = "x";
+        }
+
+    }
+
+    //Showing first move
+    //Printing Line 1 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line1[i];
+    }
+    cout << "\n";
+    //Printing Line 2 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line2[i];
+    }
+    cout << "\n";
+    //Printing Line 3 
+    for (int i = 0; i < 13; i++)
+    {
+        cout << line3[i];
+    }
+
+    cout << "\n";
+
+    a *= -1;*/
+} while (z==1);
+
+if (a < 0) {
+    cout << "Player 1 wins! Good job. \n\n";
+}
+else {
+    cout << "Player 2 is the winner! This was a great game. \n\n";
+}
